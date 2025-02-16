@@ -1,0 +1,39 @@
+.v-user-register {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.v-user-register__title {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    color: #48c9b0;
+}
+
+.v-user-register__form-container {
+    width: 90%;
+    height: 500px;
+    border-radius: 15px;
+    padding: 13px;
+}
+
+.v-user-register__form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+}
+
+.v-user-register__form-inputs {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
