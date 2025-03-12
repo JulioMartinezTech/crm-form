@@ -1,0 +1,40 @@
+.v-contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.v-contact-form__title {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    color: #48c9b0;
+}
+
+.v-contact-form__form {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 0;
+}
+
+.v-contact-form__input-container {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background-color: #ffff;
+    border-radius: 15px;
+    box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    -webkit-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    -moz-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    padding: 30px 13px;
+}

@@ -1,0 +1,54 @@
+.v-documents-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 60px;
+    padding: 20px;
+}
+
+.v-documents-form__titles-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.v-documents-form__title {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+    color: #48c9b0;
+}
+
+.v-documents-form__subtitle {
+    width: 100%;
+    font-size: 14px;
+    text-align: center;
+    color: #34495e;
+}
+
+.v-documents-form__form-container {
+    width: 45%;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background-color: #34495e;
+    border-radius: 15px;
+    box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    -webkit-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    -moz-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    padding: 30px 13px;
+}
+
+.v-documents-form__upload-icon {
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+}

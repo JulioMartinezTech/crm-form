@@ -17,9 +17,6 @@
 
 .v-user-register__form-container {
     width: 90%;
-    height: 500px;
-    border-radius: 15px;
-    padding: 13px;
 }
 
 .v-user-register__form {
@@ -27,13 +24,20 @@
     justify-content: space-around;
     align-items: center;
     gap: 16px;
+    padding: 20px 0;
 }
 
 .v-user-register__form-inputs {
-    width: 40%;
+    width: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 16px;
+    background-color: #ffff;
+    border-radius: 15px;
+    box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    -webkit-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    -moz-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    padding: 30px 13px;
 }

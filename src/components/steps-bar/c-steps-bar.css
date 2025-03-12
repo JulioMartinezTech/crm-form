@@ -7,8 +7,8 @@
 }
 
 .c-steps-bar__step {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 100%;
     display: flex;
     justify-content: center;
@@ -16,9 +16,16 @@
     background-color: grey;
 }
 
+.c-steps-bar__dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    background-color: #34495e;
+}
+
 .c-steps-bar__current-step {
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 100%;
     display: flex;
     justify-content: center;

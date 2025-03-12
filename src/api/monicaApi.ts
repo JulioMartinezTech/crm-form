@@ -1,3 +1,4 @@
+// import { useState } from "react";
 import { Gender } from "../types/monicaTypes";
 
 // const API_URL = import.meta.env.VITE_MONICA_API_URL;
@@ -11,11 +12,11 @@ export const fetchGenders = async (): Promise<Gender[]> => {
         Accept: "application/json",
       },
     });
-
+    
     if (!response.ok) {
       throw new Error(`Error: ${response.status}`);
     }
-
+    
     const data = await response.json();
     return data.data as Gender[];
   } catch (error) {

@@ -1,19 +1,28 @@
-// importamos el css
+// import edependencies
+import { InputHTMLAttributes } from 'react';
+import { UseFormRegisterReturn } from 'react-hook-form';
+// import css
 import './c-input.css'
 
-//declaramos los tipos para los props
-type InputProps = {
+//declaring all type props
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     label: string;
+    name: string;
+    required?: boolean;
+    type? : string;
+    error? : string;
+    register? : UseFormRegisterReturn
 }
 
-const CInput = ({label}: InputProps) => {
+const CInput = ({ label, required, name, type, error, register, ...rest}: InputProps) => {
     return(
         <div className='c-input'>
             {label && 
             <div className='c-input__label-container'>
-                <p className='c-input__label'>{label}</p>
+                <p className='c-input__label'>{label} {required ? <strong className='c-input__label-required-indicator'>*</strong> : ""}</p>
             </div>}
-            <input type="text"  className='c-input__input-text'/>
+            <input  className='c-input__input-text' id={name} name={name} type={type} {...rest} {...register}  />
+            {error && <p className='c-input__error-message'>{error}</p>}
         </div>
     )
 }
