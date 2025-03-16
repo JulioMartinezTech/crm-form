@@ -10,10 +10,10 @@ const VContactForm = () => {
             <h1 className='v-contact-form__title'>Contact Info</h1>
             <form action="" className='v-contact-form__form'>
                 <div className='v-contact-form__input-container'>
-                    <CInput label='Email' required/>
-                    <CInput label='Phone' required/>
-                    <CInput label='Address' />
-                    <CInput label='input' />
+                    <CInput label='Email' name='email' required/>
+                    <CInput label='Phone' name='phone' required/>
+                    <CInput label='Address' name='address' />
+                    <CInput label='input' name='input'/>
                 </div>
             </form>
         </div>
