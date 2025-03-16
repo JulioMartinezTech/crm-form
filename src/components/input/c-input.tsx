@@ -12,16 +12,17 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     type? : string;
     error? : string;
     register? : UseFormRegisterReturn
+    disabled?: boolean;
 }
 
-const CInput = ({ label, required, name, type, error, register, ...rest}: InputProps) => {
+const CInput = ({ label, required, name, type, error, register, disabled,  ...rest}: InputProps) => {
     return(
         <div className='c-input'>
             {label && 
             <div className='c-input__label-container'>
                 <p className='c-input__label'>{label} {required ? <strong className='c-input__label-required-indicator'>*</strong> : ""}</p>
             </div>}
-            <input  className='c-input__input-text' id={name} name={name} type={type} {...rest} {...register}  />
+            <input  className='c-input__input-text' id={name} name={name} type={type} {...rest} {...register}  disabled={disabled}/>
             {error && <p className='c-input__error-message'>{error}</p>}
         </div>
     )

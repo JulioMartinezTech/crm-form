@@ -1,6 +1,9 @@
 //importamos dependencias
 import { useState } from "react"
 
+// import types
+import { Contact } from "../../types/monicaTypes"
+
 // importamos componentes
 import CStepsBar from "../../components/steps-bar/c-steps-bar"
 import CButton from "../../components/button/c-button"
@@ -16,9 +19,12 @@ import VDocumentsForm from "../documents-form/v-documents-form"
 const VForm = () => {
     //declaramos una constante para saber en que step estamos
     const [currentStep, setCurrentStep] = useState<number>(1)
+    const [userContactData, setUserContactData] = useState({})
 
     //declaramos una funcion para manejar el estado de los steps
-    const handleNextSteps = () => {
+    const handleNextSteps = (data: Contact) => {
+        setUserContactData(data)
+        console.log(userContactData)
         setCurrentStep(currentStep+1)
     }
     const handlePreviousSteps = () => {
@@ -34,13 +40,12 @@ const VForm = () => {
             </div>
             <div className="v-form__right-side">
                 <div className="v-form__view-step">
-                    {currentStep === 1 && <VUserRegister/>}
+                    {currentStep === 1 && <VUserRegister onChange={(data) => handleNextSteps(data)}/>}
                     {currentStep === 2 && <VContactForm/>}
                     {currentStep === 3 && <VDocumentsForm/>}
                 </div>
                 <div className="v-form__navigation-container">
                     {currentStep >= 2 && <CButton text="Previous" onClickButton={handlePreviousSteps} />}
-                    {currentStep <= 2 && <CButton text="Next" onClickButton={handleNextSteps} />}
                 </div>
             </div>
         </div>

@@ -21,9 +21,10 @@
 
 .v-user-register__form {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 36px;
     padding: 20px 0;
 }
 

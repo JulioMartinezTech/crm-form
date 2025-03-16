@@ -6,10 +6,15 @@
     justify-content: center;
     align-items: center;
     background-color: #48c9b0;
-    -webkit-box-shadow: 10px 5px 23px -2px rgb(193, 193, 193);
-    -moz-box-shadow: 10px 5px 23px -2px rgb(193, 193, 193);
-    box-shadow: 10px 5px 23px -2px rgb(193, 193, 193);
     color: #273746;
     font-weight: 700;
     cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border: none;
+}
+
+.c-button:disabled {
+    background-color: #d1d3d5;
+    color: #fff;
 }

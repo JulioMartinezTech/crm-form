@@ -1,16 +1,21 @@
+//iport dependecies
+import { ButtonHTMLAttributes } from 'react';
+
 //importamos el css
 import './c-button.css'
 
 //declaramos el tipo de los props
 type CButtonProps = {
     text: string;
-    onClickButton: () => void;
+    type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
+    disabled?: boolean;
+    onClickButton?: () => void;
 }
 
 
-const CButton = ({text, onClickButton}: CButtonProps) => {
+const CButton = ({text, type, disabled, onClickButton}: CButtonProps) => {
     return(
-        <div className="c-button" onClick={onClickButton}>{text}</div>
+        <button type={type} className="c-button" onClick={onClickButton} disabled={disabled}>{text}</button>
     )
 }
 
