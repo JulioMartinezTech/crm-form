@@ -1,5 +1,5 @@
 //import dependencies
-import { useState } from "react";
+// import { useState } from "react";
 //import components
 import CFileInput from "../../components/fileInput/c-file-input";
 
@@ -7,7 +7,7 @@ import CFileInput from "../../components/fileInput/c-file-input";
 import "./v-documents-form.css";
 
 const VDocumentsForm = () => {
-  const [files, setFiles] = useState({});
+  // const [files, setFiles] = useState({});
   return (
     <div className="v-documents-form">
       <div className="v-documents-form__titles-container">

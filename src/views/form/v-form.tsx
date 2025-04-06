@@ -39,7 +39,7 @@ const VForm = () => {
       <div className="v-form__right-side">
         <div className="v-form__view-step">
           {currentStep === 1 && (
-            <VUserRegister onChange={() => handleNextSteps(2)} />
+            <VUserRegister onChange={() => handleNextSteps()} />
             // <VUserRegister />
           )}
           {currentStep === 2 && <VContactForm />}
