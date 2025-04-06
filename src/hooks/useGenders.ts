@@ -1,28 +1,27 @@
 //import dependecies
-import { useState, useEffect } from 'react'
-import { fetchGenders, getGendersAxios } from '../api/monicaApi'
-import { Gender } from '../types/monicaTypes'
+import { useState, useEffect } from "react";
+import { fetchGenders } from "../api/monicaApi";
+// import { getGenders } from "../api/byPassApi";
+import { Gender } from "../types/monicaTypes";
 
 export const useGenders = () => {
-    const [genders, setGenders] = useState<Gender[]>([])
-
-    useEffect(() => {
-        fetchGenders()
-          .then((data) => {
-            const dataClean = data.map(({id, name}) => ({id, name}))
-            setGenders(dataClean);
-          })
-          .catch((error) => console.error("Error al obtener géneros:", error));
-      }, []);
-
-      return genders;
-};
-
-export const useGendersAxio = () => {
-  // const [gendersAxio, setGendersAxio] = useState<Gender[]>([])
+  const [genders, setGenders] = useState<Gender[]>([]);
 
   useEffect(() => {
-      getGendersAxios()
-  })
-}
+    fetchGenders()
+      .then((data) => {
+        const dataClean = data.map(({ id, name }) => ({ id, name }));
+        setGenders(dataClean);
+      })
+      .catch((error) => console.error("Error al obtener géneros:", error));
+  }, []);
 
+  return genders;
+};
+// export const useNodeGenders = () => {
+//   // const [nodeGenders, setNodeGenders] = useState([])
+
+//   useEffect(() => {
+//     getGenders();
+//   });
+// };

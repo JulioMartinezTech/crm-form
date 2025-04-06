@@ -1,0 +1,19 @@
+{
+  "first_name": "henri",
+  "last_name": "troyat",
+  "nickname": "Rambo",
+  "gender_id": 1,
+  "birthdate_day": null,
+  "birthdate_month": null,
+  "birthdate_year": null,
+  "is_birthdate_known": false,
+  "birthdate_is_age_based": true,
+  "birthdate_age": 29,
+  "is_partial": false,
+  "is_deceased": true,
+  "deceased_date_day": 2,
+  "deceased_date_month": 2,
+  "deceased_date_year": 2017,
+  "deceased_date_is_age_based": false,
+  "is_deceased_date_known": true
+}
