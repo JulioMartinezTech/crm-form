@@ -12,7 +12,7 @@ import VDocumentsForm from "../documents-form/v-documents-form";
 
 const VForm = () => {
   //declaramos una constante para saber en que step estamos
-  const [currentStep, setCurrentStep] = useState<number>(4);
+  const [currentStep, setCurrentStep] = useState<number>(1);
 
   //declaramos una funcion para manejar el estado de los steps
   const handleNextSteps = () => {
