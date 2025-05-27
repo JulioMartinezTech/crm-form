@@ -9,7 +9,6 @@ import {
   ApiAddress,
   ApiCompany,
   ApiOccupation,
-  ApiDocument,
 } from "../types/monicaTypes";
 
 // const API_URL = import.meta.env.VITE_MONICA_API_URL;
@@ -207,20 +206,17 @@ export const createOccupation = async (occupationData: ApiOccupation) => {
     console.error(error);
   }
 };
-export const createDocument = async (documentData: ApiDocument) => {
+export const createDocument = async (documentData: FormData) => {
   try {
     const response = await fetch(
       `https://monica-api-server.onrender.com/document`,
       {
         method: "POST",
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-        body: JSON.stringify(documentData),
+        body: documentData,
       }
     );
     if (!response.ok) throw new Error("Failed to upload document");
-    if (response.ok) console.log("Document uploaded");
+    console.log("Document uploaded");
     return await response.json();
   } catch (error) {
     console.error(error);

@@ -8,7 +8,10 @@ import { createDocument } from "../../api/monicaApi";
 // import css
 import "./v-documents-form.css";
 
-const VDocumentsForm = () => {
+//type
+import { PageOnChange } from "../../types/pageTypes";
+
+const VDocumentsForm = ({ onChange }: PageOnChange) => {
   const [isFiles, setIsFiles] = useState<boolean>(false);
   const [filesName, setFilesName] = useState<string[]>([]);
   const [files, setFiles] = useState<File[]>([]);
@@ -43,14 +46,16 @@ const VDocumentsForm = () => {
     setFiles((prevFiles) => prevFiles.filter((file) => file.name !== name));
     setFilesName((prevFiles) => prevFiles.filter((file) => file !== name));
   };
-  const handleSubmit = () => {
-    files.forEach((itemfile) => {
-      const data = {
-        contact_id: contactId,
-        document: itemfile,
-      };
-      createDocument(data);
-    });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    for (const itemfile of files) {
+      const formData = new FormData();
+      formData.append("contact_id", contactId.toString());
+      formData.append("document", itemfile);
+
+      await createDocument(formData); // esperas cada subida
+    }
+    onChange();
   };
   useEffect(() => {
     if (files.length === 0) {

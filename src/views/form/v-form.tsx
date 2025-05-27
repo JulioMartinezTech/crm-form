@@ -18,9 +18,9 @@ const VForm = () => {
   const handleNextSteps = () => {
     setCurrentStep(currentStep + 1);
   };
-  // const handlePreviousSteps = () => {
-  //   setCurrentStep(currentStep - 1);
-  // };
+  const handleLastStep = () => {
+    setCurrentStep(1);
+  };
   return (
     <div className="v-form">
       <div className={"v-form__left-side"}>
@@ -42,7 +42,9 @@ const VForm = () => {
           {currentStep === 3 && (
             <VOccupation onChange={() => handleNextSteps()} />
           )}
-          {currentStep === 4 && <VDocumentsForm />}
+          {currentStep === 4 && (
+            <VDocumentsForm onChange={() => handleLastStep()} />
+          )}
         </div>
       </div>
     </div>

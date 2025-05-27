@@ -38,6 +38,3 @@ export interface ContactOccupation {
   start_date?: Date | string;
   end_date?: Date | string;
 }
-export interface ContactDocuments {
-  files: File[];
-}
