@@ -4,6 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .v-home__left-side-container {
@@ -53,4 +54,22 @@
     font-weight: 700;
     color: #566573;
     text-align: center;
+}
+
+@media (width <=900px) {
+    .v-home__left-side-container {
+        display: none;
+    }
+
+    .v-home__right-side-container {
+        width: 100%;
+    }
+
+    .v-home__right-side__text-container {
+        width: 90%;
+    }
+
+    .v-home__right-side__title {
+        font-size: 30px;
+    }
 }

@@ -1,12 +1,12 @@
 import { FC } from "react";
-import { UseFormRegisterReturn } from 'react-hook-form';
+import { UseFormRegisterReturn } from "react-hook-form";
 
 //importamos el css
-import './c-select-box.css'
+import "./c-select-box.css";
 
 type SelectBoxProps = {
-  options: { id: number; name: string; disabled?: boolean }[];
-  value: number | string;
+  options: { id: number | string; name: string; disabled?: boolean }[];
+  value: number | string | undefined;
   onChange: (value: number) => void;
   label?: string;
   disabled?: boolean;
@@ -16,10 +16,31 @@ type SelectBoxProps = {
   register?: UseFormRegisterReturn;
 };
 
-const CSelectBox: FC<SelectBoxProps> = ({ options, value, onChange, label, disabled, placeholder, required, error, register }) => {
+const CSelectBox: FC<SelectBoxProps> = ({
+  options,
+  value,
+  onChange,
+  label,
+  disabled,
+  placeholder,
+  required,
+  error,
+  register,
+}) => {
   return (
     <div className="c-select-box">
-      {label && <label className="c-select-box__label">{label} {required ? <strong className='c-select-box__label-required-indicator'>*</strong> : ""}</label>}
+      {label && (
+        <label className="c-select-box__label">
+          {label}{" "}
+          {required ? (
+            <strong className="c-select-box__label-required-indicator">
+              *
+            </strong>
+          ) : (
+            ""
+          )}
+        </label>
+      )}
       <select
         className="c-select-box__select-input"
         value={value}
@@ -27,14 +48,18 @@ const CSelectBox: FC<SelectBoxProps> = ({ options, value, onChange, label, disab
         disabled={disabled}
         {...register}
       >
-        {placeholder && <option value={""} disabled hidden>{placeholder}</option>}
+        {placeholder && (
+          <option value={""} disabled hidden>
+            {placeholder}
+          </option>
+        )}
         {options.map((option) => (
           <option key={option.id} value={option.id} disabled={option.disabled}>
             {option.name}
           </option>
         ))}
       </select>
-      {error && <p className='c-select-box__error-message'>{error}</p>}
+      {error && <p className="c-select-box__error-message">{error}</p>}
     </div>
   );
 };

@@ -1,24 +1,20 @@
-// import dependencis
-import { Contact } from "../../types/monicaTypes";
-import { useGenders } from "../../hooks/useGenders";
-import { createContact } from "../../api/monicaApi";
+// import dependencies
 import { useForm, SubmitHandler } from "react-hook-form";
-
+//import types
+import { Contact, PageOnChange } from "../../types/pageTypes";
+//API
+import { createContact } from "../../api/monicaApi";
+//custom Hooks
+import { useGenders } from "../../hooks/useGenders";
 //import components
 import CInput from "../../components/input/c-input";
 import CSelectBox from "../../components/select-box/c-select-box";
 import CDatePicker from "../../components/birthdatePicker/c-date-picker";
 import CButton from "../../components/button/c-button";
-
 //import css
 import "./v-user-register.css";
 
-//declarate types for props
-type VUserRegisterProps = {
-  onChange: () => void;
-};
-
-const VUserRegister = ({ onChange }: VUserRegisterProps) => {
+const VUserRegister = ({ onChange }: PageOnChange) => {
   //load genders from API
   const genders = useGenders();
 
@@ -141,7 +137,7 @@ const VUserRegister = ({ onChange }: VUserRegisterProps) => {
             {/* <div className='v-user-register__form-inputs'>
                         </div> */}
           </>
-          <CButton type="submit" text="Create" disabled={!isValid} />
+          <CButton type="submit" text="Next" disabled={!isValid} />
         </form>
       </div>
     </div>

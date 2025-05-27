@@ -14,6 +14,7 @@ type CDatePickerProps<T extends FieldValues> = {
   required?: boolean;
   error?: string;
   control: Control<T>;
+  format?: string;
 };
 
 const CDatePicker = <T extends FieldValues>({
@@ -22,6 +23,7 @@ const CDatePicker = <T extends FieldValues>({
   required,
   error,
   control,
+  format,
 }: CDatePickerProps<T>) => {
   return (
     <div className="c-date-picker">
@@ -37,8 +39,8 @@ const CDatePicker = <T extends FieldValues>({
             selected={field.value}
             onChange={(date) => field.onChange(date)}
             className="c-date-picker__datePicker"
-            dateFormat="MM-dd-yyyy"
-            placeholderText="MM-DD-YYYY"
+            dateFormat={format ? format : "MM-dd-yyyy"}
+            placeholderText={format ? format.toUpperCase() : "MM-dd-yyyy"}
             showMonthYearDropdown
             scrollableMonthYearDropdown
             minDate={new Date(1930, 0, 1)} // Set a minimum selectable date

@@ -4,8 +4,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 30px;
-    padding: 20px;
+    gap: 10px;
+    padding: 20px 20px 0 20px;
 }
 
 .v-user-register__title {
@@ -30,6 +30,7 @@
 
 .v-user-register__form-inputs {
     width: 45%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,4 +42,10 @@
     -webkit-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
     -moz-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
     padding: 30px 13px;
+}
+
+@media (width <=900px) {
+    .v-user-register__form-inputs {
+        width: 90%;
+    }
 }

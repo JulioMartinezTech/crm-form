@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 60px;
+    gap: 30px;
     padding: 20px;
 }
 
@@ -14,41 +14,103 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
+    gap: 6px;
 }
 
 .v-documents-form__title {
     width: 100%;
-    font-size: 30px;
+    font-size: 1.7rem;
     text-align: center;
     color: #48c9b0;
 }
 
 .v-documents-form__subtitle {
     width: 100%;
-    font-size: 14px;
+    font-size: 0.9rem;
     text-align: center;
     color: #34495e;
 }
 
-.v-documents-form__form-container {
-    width: 45%;
-    min-height: 350px;
+.v-documents-form__cards {
+    width: 100%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 16px;
-    background-color: #34495e;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.v-documents-form__files-group {
+    width: 45%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: #ffff;
     border-radius: 15px;
     box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
     -webkit-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
     -moz-box-shadow: 6px 11px 22px -1px rgba(128, 139, 150, 0.76);
+    overflow-y: auto;
     padding: 30px 13px;
+
 }
 
-.v-documents-form__upload-icon {
-    width: 100px;
-    height: 100px;
-    opacity: 0.3;
+.v-documents-form__files-group__title {
+    width: 100%;
+    font-size: 1.5rem;
+    text-align: center;
+    color: #34495e;
+}
+
+.v-documents-form__files-group__list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.v-documents-form__files-group__file-box {
+    width: 90%;
+    min-height: 20px;
+    border: solid 1px #34495e;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+
+}
+
+.v-documents-form__files-group__file-name {
+    width: 70%;
+    color: rgb(161, 161, 161);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.v-documents-form__files-group__remove-icon {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.v-documents-form__files-group__message {
+    height: 20px;
+    color: rgb(161, 161, 161);
+    padding: 10px;
+}
+
+@media (width <=900px) {
+    .v-documents-form__files-group {
+        width: 90%;
+    }
 }

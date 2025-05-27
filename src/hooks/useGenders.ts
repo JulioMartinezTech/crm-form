@@ -1,7 +1,6 @@
 //import dependecies
 import { useState, useEffect } from "react";
 import { fetchGenders } from "../api/monicaApi";
-// import { getGenders } from "../api/byPassApi";
 import { Gender } from "../types/monicaTypes";
 
 export const useGenders = () => {
@@ -18,10 +17,3 @@ export const useGenders = () => {
 
   return genders;
 };
-// export const useNodeGenders = () => {
-//   // const [nodeGenders, setNodeGenders] = useState([])
-
-//   useEffect(() => {
-//     getGenders();
-//   });
-// };
